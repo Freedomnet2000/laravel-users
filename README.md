@@ -18,7 +18,7 @@ This project combines Laravel with React via Inertia.js, providing a complete us
 
 ```bash
 git clone https://github.com/Freedomnet2000/laravel-users.git
-cd aravel-users
+cd laravel-users
 ```
 
 ### Install PHP dependencies
