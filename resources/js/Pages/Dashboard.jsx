@@ -32,12 +32,12 @@ export default function Dashboard({ users }) {
                     </thead>
                     <tbody>
                         {users.map(user => (
-                            <tr key={user.id} className="border-t dark:border-gray-600">
-                                <td className="p-2">{user.name}</td>
-                                <td className="p-2">{user.email}</td>
-                                <td className="p-2">{user.phone}</td>
-                                <td className="p-2">{user.birthdate}</td>
-                                <td className="p-2">
+                            <tr key={user.id} className="border-t dark:border-gray-600 align-center">
+                                <td className="p-2 text-center">{user.name}</td>
+                                <td className="p-2 text-center">{user.email}</td>
+                                <td className="p-2 text-center">{user.phone}</td>
+                                <td className="p-2 text-center">{user.birthdate}</td>
+                                <td className="p-2 text-center">
                                     <button onClick={() => handleEdit(user.id)} className="text-blue-500 mr-2">Edit</button>
                                     <button onClick={() => handleDelete(user.id)} className="text-red-500">Delete</button>
                                 </td>
