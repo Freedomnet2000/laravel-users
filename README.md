@@ -1,90 +1,86 @@
-Laravel + React + Inertia.js – User Management Dashboard
-A full-stack web application built with Laravel, React, and Inertia.js, featuring user authentication, a dynamic dashboard, and CRUD operations for user management.
+# Laravel + React + Inertia – User System and Dashboard
 
-🚀 Technologies Used
-Backend: Laravel 10
+This project combines Laravel with React via Inertia.js, providing a complete user management system with a dashboard. It includes features like registration, login, user editing, and deletion.
 
-Frontend: React 18 with Inertia.js
+## 🚀 Technologies
 
-Authentication: Laravel Breeze with Sanctum
+- Laravel 10
+- React 18
+- Inertia.js
+- Laravel Breeze
+- Laravel Sanctum
+- Tailwind CSS
+- Vite
 
-Styling: Tailwind CSS
+## 📦 Installation
 
-Build Tool: Vite
+### Clone the project
 
-📦 Installation
-Clone the repository:
+```bash
+git clone https://github.com/Freedomnet2000/laravel-users.git
+cd aravel-users
+```
 
-bash
-Copy
-Edit
-git clone https://github.com/your-username/your-repo.git
-cd your-repo
-Install PHP dependencies:
+### Install PHP dependencies
 
-bash
-Copy
-Edit
+```bash
 composer install
-Install JavaScript dependencies:
+```
 
-bash
-Copy
-Edit
+### Install JavaScript dependencies
+
+```bash
 npm install
-Set up environment variables:
+```
 
-bash
-Copy
-Edit
+### Configure the environment
+
+```bash
 cp .env.example .env
 php artisan key:generate
-Configure your database:
+```
 
-Update the .env file with your database credentials.
+### Set up the database
 
-Run migrations:
+Edit your `.env` file with your database connection details.
 
-bash
-Copy
-Edit
+Run the migrations:
+
+```bash
 php artisan migrate
-Start the development servers:
+```
 
-Laravel backend:
+### Run the servers
 
-bash
-Copy
-Edit
+Start the Laravel server:
+
+```bash
 php artisan serve
-Vite frontend:
+```
 
-bash
-Copy
-Edit
+Compile the frontend assets:
+
+```bash
 npm run dev
-Access the application:
+```
 
-Open your browser and navigate to http://localhost:8000.
+### Access the application
 
-🧰 Features
-User registration and login
+Open your browser and navigate to: `http://localhost:8000`
 
-Protected dashboard displaying all users
+## 🧰 Features
 
-Edit and delete user functionality
+- User registration and login
+- Dashboard with a list of users
+- Edit user details
+- Delete users
+- Route protection using middleware
+- Responsive design with Tailwind CSS
 
-Middleware protection for authenticated routes
+## 📁 Project Structure
 
-Responsive design with Tailwind CSS
-
-📁 Project Structure
-routes/web.php: Defines web routes
-
-app/Models/User.php: User model
-
-resources/js/Pages/Dashboard.jsx: Dashboard page
-
-resources/js/Pages/EditUser.jsx: User edit page
-
-resources/js/Layouts/AuthenticatedLayout.jsx: Layout for authenticated users
+- `routes/web.php` – Route definitions
+- `app/Models/User.php` – User model
+- `resources/js/Pages/Dashboard.jsx` – Dashboard page
+- `resources/js/Pages/EditUser.jsx` – User edit page
+- `resources/js/Layouts/AuthenticatedLayout.jsx` – Layout for authenticated users
