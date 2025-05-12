@@ -14,6 +14,34 @@ class UserController extends Controller
         return Inertia::render('Dashboard', ['users' => $users]);
     }
 
+    public function create()
+    {
+        return Inertia::render('CreateUser');
+    }
+
+    public function store(Request $request)
+    {
+        $data = $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|email|unique:users,email|max:255',
+            'phone' => 'nullable|string',
+            'birthdate' => 'nullable|date',
+            'password' => 'required|string|min:8|confirmed',
+        ]);
+
+        User::create([
+            ...$data,
+            'password' => bcrypt($data['password']),
+        ]);
+
+        return redirect()->route('users.index')->with('success', 'User created.');
+    }
+
+    public function show(User $user)
+    {
+        return Inertia::render('ShowUser', ['user' => $user]);
+    }
+
     public function edit(User $user)
     {
         return Inertia::render('EditUser', ['user' => $user]);
@@ -23,13 +51,13 @@ class UserController extends Controller
     {
         $data = $request->validate([
             'name' => 'required|string|max:255',
-            'email' => 'required|email|max:255',
+            'email' => 'required|email|max:255|unique:users,email,' . $user->id,
             'phone' => 'nullable|string',
             'birthdate' => 'nullable|date',
         ]);
 
         $user->update($data);
-        return redirect()->route('dashboard')->with('success', 'User updated.');
+        return redirect()->route('users.index')->with('success', 'User updated.');
     }
 
     public function destroy(User $user)
